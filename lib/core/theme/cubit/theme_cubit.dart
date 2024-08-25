@@ -1,46 +1,41 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:live_match/core/shared_pref/shared_pref.dart';
+import 'package:live_match/core/theme/service/theme_service.dart';
 
 part 'theme_state.dart';
 part 'theme_cubit.freezed.dart';
 
 class ThemeCubit extends Cubit<ThemeState> {
   ThemeCubit() : super(const ThemeState.light()) {
-    _loadTheme();
-  }
-  static const String _themeKey = 'theme_key';
-
-  void toggleTheme() async {
-    state.maybeWhen(
-      light: () {
-        emit(const ThemeState.dark());
-        CacheHelper.saveData(key: _themeKey, value: 'dark');
-      },
-      dark: () {
-        emit(const ThemeState.light());
-        CacheHelper.saveData(key: _themeKey, value: 'light');
-      },
-      orElse: () {},
-    );
+    _initializeTheme();
   }
 
-  ThemeData get themeData {
-    return state.maybeWhen(
-      light: () => ThemeData.light(),
-      dark: () => ThemeData.dark(),
-      orElse: () => ThemeData.light(),
-    );
-  }
-
-  void _loadTheme() async {
-    String? theme = CacheHelper.getData(key: _themeKey).toString();
-
-    if (theme == 'dark') {
+  // Initialize theme by loading from ThemeService
+  void _initializeTheme() async {
+    ThemeService.loadTheme();
+    final isDarkTheme =
+        ThemeService.isDarkTheme; // Assuming ThemeService has this property
+    if (isDarkTheme) {
       emit(const ThemeState.dark());
     } else {
       emit(const ThemeState.light());
     }
+  }
+
+  // Toggle theme
+  void toggleTheme() async {
+    if (state is _LightTheme) {
+      ThemeService.toggleTheme("dark");
+      emit(const ThemeState.dark());
+    } else {
+      ThemeService.toggleTheme("light");
+      emit(const ThemeState.light());
+    }
+  }
+
+  // Get ThemeData based on the current state
+  ThemeData get themeData {
+    return state is _LightTheme ? ThemeData.light() : ThemeData.dark();
   }
 }
