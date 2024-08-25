@@ -25,8 +25,10 @@ class MyApp extends StatelessWidget {
       bloc: getIt<ThemeCubit>(),
       builder: (context, state) {
         return MaterialApp(
-          title: 'Flutter Demo',
-          theme: ThemeService.themeData,
+          title: 'Live Match',
+          theme: ThemeService().lightTheme,
+          darkTheme: ThemeService().darkTheme,
+          themeMode: ThemeService().themeApp(),
           home: const MainScreen(),
         );
       },

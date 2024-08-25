@@ -3,11 +3,10 @@ import 'package:flutter/material.dart';
 import '../../shared_pref/shared_pref.dart';
 
 class ThemeService {
+  ThemeData lightTheme = ThemeData.light();
+  ThemeData darkTheme = ThemeData.dark();
   // var Key Theme
   static const String _themeKey = 'theme_key';
-
-  // var Theme Data
-  static ThemeData? themeData;
 
   // toggle Theme Var
   static bool isDarkTheme = false;
@@ -15,21 +14,19 @@ class ThemeService {
   static void loadTheme() async {
     final theme = await CacheHelper.getData(key: _themeKey);
     if (theme == "dark") {
-      themeData = ThemeData.dark();
       isDarkTheme = true;
     } else {
-      themeData = ThemeData.light();
       isDarkTheme = false;
     }
   }
 
+  ThemeMode themeApp() => isDarkTheme ? ThemeMode.dark : ThemeMode.light;
+
   // toggle themeing
   static void toggleTheme(String themeValue) async {
     if (themeValue == "dark") {
-      themeData = ThemeData.dark();
       isDarkTheme = true;
     } else {
-      themeData = ThemeData.light();
       isDarkTheme = false;
     }
     await CacheHelper.saveData(key: _themeKey, value: themeValue);
