@@ -30,10 +30,10 @@ class MyApp extends StatelessWidget {
       builder: (context, state) {
         return BlocBuilder<ThemeCubit, ThemeState>(
           bloc: getIt<ThemeCubit>(),
-          builder: (__, _) {
+          builder: (context, state) {
             return MaterialApp(
               title: 'Live Match',
-              locale: LocalizationsService.locale,
+              locale: getIt<LocalizationsCubit>().state.locale,
               supportedLocales: const [
                 Locale('en'),
                 Locale('ar'),
