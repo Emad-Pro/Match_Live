@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
           builder: (context, state) {
             return MaterialApp(
               title: 'Live Match',
+              debugShowCheckedModeBanner: false,
               locale: getIt<LocalizationsCubit>().state.locale,
               supportedLocales: const [
                 Locale('en'),
