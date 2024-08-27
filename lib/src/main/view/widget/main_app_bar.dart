@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:live_match/core/localizations/cubit/localizations_cubit.dart';
 import 'package:live_match/core/localizations/localizations_service.dart';
 
 mainAppBar(context) => AppBar(
@@ -8,9 +7,14 @@ mainAppBar(context) => AppBar(
         IconButton(
             onPressed: () {
               showDatePicker(
-                  context: context,
-                  firstDate: DateTime(2024),
-                  lastDate: DateTime(2025));
+                context: context,
+                firstDate: DateTime(
+                  2024,
+                ),
+                lastDate: DateTime(
+                  2025,
+                ),
+              );
             },
             icon: const Icon(Icons.calendar_month)),
         PopupMenuButton(
