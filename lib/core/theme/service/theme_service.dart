@@ -1,21 +1,14 @@
 import 'package:flutter/material.dart';
-
-import '../../get_it/service_locator.dart';
-import '../../localizations/cubit/localizations_cubit.dart';
 import '../../shared_pref/shared_pref.dart';
 
 class ThemeService {
-  static String? customFontFamily() {
-    return getIt<LocalizationsCubit>().state.locale.languageCode == 'en'
-        ? 'nato_kufe'
-        : 'noto_serif';
-  }
+  static ThemeData lightTheme(Locale locale) => ThemeData(
+      brightness: Brightness.light,
+      fontFamily: locale.languageCode == 'ar' ? 'nato_kufe' : 'noto_serif');
 
-  static ThemeData lightTheme =
-      ThemeData(brightness: Brightness.light, fontFamily: customFontFamily());
-
-  static ThemeData darkTheme =
-      ThemeData(brightness: Brightness.dark, fontFamily: customFontFamily());
+  static ThemeData darkTheme(Locale locale) => ThemeData(
+      brightness: Brightness.dark,
+      fontFamily: locale.languageCode == 'ar' ? 'nato_kufe' : 'noto_serif');
 
   // var Key Theme
   static const String _themeKey = 'theme_key';

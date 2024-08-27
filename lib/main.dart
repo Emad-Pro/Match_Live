@@ -31,10 +31,11 @@ class MyApp extends StatelessWidget {
         return BlocBuilder<ThemeCubit, ThemeState>(
           bloc: getIt<ThemeCubit>(),
           builder: (context, state) {
+            final locale = getIt<LocalizationsCubit>().state.locale;
             return MaterialApp(
               title: 'Live Match',
               debugShowCheckedModeBanner: false,
-              locale: getIt<LocalizationsCubit>().state.locale,
+              locale: locale,
               supportedLocales: const [
                 Locale('en'),
                 Locale('ar'),
@@ -45,8 +46,8 @@ class MyApp extends StatelessWidget {
                 GlobalWidgetsLocalizations.delegate,
                 GlobalCupertinoLocalizations.delegate,
               ],
-              theme: ThemeService.lightTheme,
-              darkTheme: ThemeService.darkTheme,
+              theme: ThemeService.lightTheme(locale),
+              darkTheme: ThemeService.darkTheme(locale),
               themeMode: ThemeService().themeApp(),
               home: const MainScreen(),
             );
