@@ -45,8 +45,8 @@ class MyApp extends StatelessWidget {
                 GlobalWidgetsLocalizations.delegate,
                 GlobalCupertinoLocalizations.delegate,
               ],
-              theme: ThemeService().lightTheme,
-              darkTheme: ThemeService().darkTheme,
+              theme: ThemeService.lightTheme,
+              darkTheme: ThemeService.darkTheme,
               themeMode: ThemeService().themeApp(),
               home: const MainScreen(),
             );
