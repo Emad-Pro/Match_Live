@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:live_match/core/localizations/localizations_service.dart';
 
 import '../../../../core/widget/custom_list_tile.dart';
+import '../../../settings/view/screen/settings_screen.dart';
 
 class MainDrawer extends StatelessWidget {
   const MainDrawer({
@@ -51,7 +52,10 @@ class MainDrawer extends StatelessWidget {
           CustomListTile(
             titleText: "Settings".tr(context),
             leadingIcon: Icons.settings,
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => SettingsScreen()));
+            },
           )
         ],
       ),
