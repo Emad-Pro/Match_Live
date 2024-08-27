@@ -12,6 +12,7 @@ class MainDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     return Drawer(
+      width: 200,
       child: Column(
         children: [
           Icon(
