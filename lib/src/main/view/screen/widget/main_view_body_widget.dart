@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../main_screen.dart';
+import '../main_build_section_live_widget.dart';
 
 class MainViewBodyWidget extends StatelessWidget {
   const MainViewBodyWidget({
