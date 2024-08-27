@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
 
+import '../../get_it/service_locator.dart';
+import '../../localizations/cubit/localizations_cubit.dart';
 import '../../shared_pref/shared_pref.dart';
 
 class ThemeService {
-  ThemeData lightTheme = ThemeData.light();
-  ThemeData darkTheme = ThemeData.dark();
+  static String? customFontFamily() {
+    return getIt<LocalizationsCubit>().state.locale.languageCode == 'en'
+        ? 'nato_kufe'
+        : 'noto_serif';
+  }
+
+  static ThemeData lightTheme =
+      ThemeData(brightness: Brightness.light, fontFamily: customFontFamily());
+
+  static ThemeData darkTheme =
+      ThemeData(brightness: Brightness.dark, fontFamily: customFontFamily());
+
   // var Key Theme
   static const String _themeKey = 'theme_key';
 

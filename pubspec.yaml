@@ -39,3 +39,12 @@ flutter:
   assets:
     - assets/lang/en.json
     - assets/lang/ar.json
+
+  fonts:
+    - family: nato_kufe
+      fonts:
+        - asset: assets/fonts/noto_kufi/noto_kufi.ttf
+
+    - family: noto_serif
+      fonts:
+        - asset: assets/fonts/noto_serif/noto_serif.ttf
