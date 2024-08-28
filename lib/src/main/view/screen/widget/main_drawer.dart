@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:live_match/core/localizations/localizations_service.dart';
+import 'package:live_match/src/match_schedule/view/screen/match_schedule_screen.dart';
 
 import '../../../../../core/widget/custom_list_tile.dart';
 import '../../../../settings/view/screen/settings_screen.dart';
@@ -32,7 +33,12 @@ class MainDrawer extends StatelessWidget {
           CustomListTile(
             titleText: "Match schedule".tr(context),
             leadingIcon: Icons.calendar_month,
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => MatchScheduleScreen()));
+            },
           ),
           CustomListTile(
             titleText: "Last News".tr(context),
