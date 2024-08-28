@@ -41,6 +41,7 @@ flutter:
   assets:
     - assets/lang/en.json
     - assets/lang/ar.json
+    - assets/images/
 
   fonts:
     - family: nato_kufe
