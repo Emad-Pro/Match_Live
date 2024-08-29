@@ -22,40 +22,43 @@ class MatchScheduleBuildListViewItem extends StatelessWidget {
         onTap: () {
           showDialog(
               context: context,
-              builder: (context) => AlertDialog(
+              builder: (context) => const AlertDialog(
                     content: MatchSchduleDailogDetailsMatch(),
                   ));
         },
         child: Container(
           decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
               color: Theme.of(context).colorScheme.primary.withOpacity(0.2)),
-          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
+          padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 10.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               MatchSchduleTeamDetailsWidget(
                   teamNum: 1, teamDetails: match.teamOneDetails),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Center(
-                  child: Column(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                            color: Colors.red,
-                            borderRadius: BorderRadius.circular(2)),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 5, vertical: 2),
-                        child: Text('لم يبدأ',
+              FittedBox(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                  child: Center(
+                    child: Column(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Colors.red,
+                              borderRadius: BorderRadius.circular(2)),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 5, vertical: 2),
+                          child: Text('لم يبدأ',
+                              style: TextStyle(
+                                  fontSize: getResponsiveFontSize(context,
+                                      fontSize: 10))),
+                        ),
+                        Text(match.time,
                             style: TextStyle(
                                 fontSize: getResponsiveFontSize(context,
-                                    fontSize: 10))),
-                      ),
-                      Text(match.time,
-                          style: TextStyle(
-                              fontSize: getResponsiveFontSize(context,
-                                  fontSize: 14))),
-                    ],
+                                    fontSize: 14))),
+                      ],
+                    ),
                   ),
                 ),
               ),
