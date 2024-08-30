@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/widget/custom_dividor.dart';
-import 'match_schdule_dailog_details_close_button.dart';
+import '../../../../../core/widget/custom_close_button.dart';
 import 'match_schdule_dailog_details_custom_tile.dart';
 
 class MatchSchduleDailogDetailsMatch extends StatelessWidget {
@@ -13,7 +13,8 @@ class MatchSchduleDailogDetailsMatch extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        MatchSchduleDailogDetailsCloseButton(),
+        Align(
+            alignment: AlignmentDirectional.topEnd, child: CustomCloseButton()),
         MatchSchduleDailogDetailsCustomTile(
           imagePath: "assets/images/winning.png",
           title: "champion",
