@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:live_match/core/localizations/localizations_service.dart';
+import 'package:live_match/src/last_news/view/screen/last_news_screen.dart';
 import 'package:live_match/src/match_schedule/view/screen/match_schedule_screen.dart';
 
 import '../../../../../core/widget/custom_list_tile.dart';
@@ -43,7 +44,10 @@ class MainDrawer extends StatelessWidget {
           CustomListTile(
             titleText: "Last News".tr(context),
             leadingIcon: Icons.newspaper,
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => LastNewsScreen()));
+            },
           ),
           CustomListTile(
             titleText: "Contact Us".tr(context),
