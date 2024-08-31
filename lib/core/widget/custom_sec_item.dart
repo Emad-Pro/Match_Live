@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 
-class MainBuildSectionsLiveWidget extends StatelessWidget {
-  const MainBuildSectionsLiveWidget({
-    super.key,
-    required this.titleText,
-    required this.onTap,
-    this.widget,
-  });
+class CustomSecItem extends StatelessWidget {
+  const CustomSecItem(
+      {super.key, required this.titleText, required this.onTap, this.logoPath});
   final String titleText;
+  final String? logoPath;
   final void Function() onTap;
-  final Widget? widget;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,7 +20,9 @@ class MainBuildSectionsLiveWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              widget ?? const Icon(Icons.live_tv),
+              if (logoPath != null)
+                Image(width: 25, height: 25, image: NetworkImage(logoPath!)),
+              if (logoPath == null) const Icon(Icons.live_tv),
               Center(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10.0),

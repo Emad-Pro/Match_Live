@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../main_build_section_live_widget.dart';
+import '../../../../../core/widget/custom_sec_item.dart';
+import '../../../../category/view/screen/category_sccreen.dart';
 
 class MainViewBodyWidget extends StatelessWidget {
   const MainViewBodyWidget({
@@ -11,30 +12,17 @@ class MainViewBodyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        MainBuildSectionsLiveWidget(
-          titleText: "Server Live Main",
-          onTap: () {},
-        ),
-        MainBuildSectionsLiveWidget(
-          titleText: "Arabic Series",
-          onTap: () {},
-        ),
-        MainBuildSectionsLiveWidget(
-          titleText: "Ramdan Series 2024",
-          onTap: () {},
-        ),
-        MainBuildSectionsLiveWidget(
-          titleText: "Arabic Movies",
-          onTap: () {},
-        ),
-        MainBuildSectionsLiveWidget(
-          titleText: "Plays",
-          onTap: () {},
-        ),
-        MainBuildSectionsLiveWidget(
-          titleText: "SpaceToon",
-          onTap: () {},
-        )
+        CustomSecItem(
+            titleText: "Server Live Main",
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => CategorySccreen()));
+            }),
+        CustomSecItem(titleText: "Arabic Series", onTap: () {}),
+        CustomSecItem(titleText: "Ramdan Series 2024", onTap: () {}),
+        CustomSecItem(titleText: "Arabic Movies", onTap: () {}),
+        CustomSecItem(titleText: "Plays", onTap: () {}),
+        CustomSecItem(titleText: "SpaceToon", onTap: () {})
       ],
     );
   }
