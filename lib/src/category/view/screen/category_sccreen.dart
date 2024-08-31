@@ -4,6 +4,7 @@ import 'package:live_match/core/widget/custom_sec_item.dart';
 import 'package:live_match/src/category/view/cubit/category_cubit.dart';
 
 import '../../../../core/get_it/service_locator.dart';
+import '../../../channels/view/channel_screen.dart';
 
 class CategorySccreen extends StatelessWidget {
   const CategorySccreen({super.key});
@@ -34,7 +35,12 @@ class CategorySccreen extends StatelessWidget {
               loading: () => ListView.builder(
                   itemBuilder: (context, index) => CustomSecItem(
                         titleText: "titleText",
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ChannelScreen()));
+                        },
                         logoPath:
                             'https://i.imgur.com/PVt8OPN_d.webp?maxwidth=760&fidelity=grand',
                       )),
