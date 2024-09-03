@@ -26,6 +26,8 @@ dependencies:
   equatable: ^2.0.5
   dio: ^5.6.0
   flutter_svg: ^2.0.10+1
+  audio_video_progress_bar: ^2.0.3
+  video_player: 
 
 dev_dependencies:
   flutter_test:
@@ -34,8 +36,7 @@ dev_dependencies:
   build_runner: ^2.4.12
   freezed: ^2.5.7
   json_serializable: ^6.8.0
-  chewie: 
-  video_player: 
+
 
 flutter:
 
@@ -45,6 +46,7 @@ flutter:
     - assets/lang/en.json
     - assets/lang/ar.json
     - assets/images/
+    - assets/svg_image/video_controller/
 
   fonts:
     - family: nato_kufe

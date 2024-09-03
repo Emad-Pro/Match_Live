@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:live_match/src/category/model/model/category_model/list_channel.dart';
 
+import '../../../core/responsive/responsive_text.dart';
 import 'widget/channel_gridview.dart';
 
 class ChannelScreen extends StatelessWidget {
@@ -12,7 +13,12 @@ class ChannelScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(channels[0].groupTitle!),
+          title: Text(
+            channels[0].groupTitle!,
+            style: TextStyle(
+                fontSize: getResponsiveFontSize(context, fontSize: 20),
+                fontWeight: FontWeight.bold),
+          ),
         ),
         body: ChannelGridView(
           channel: channels,

@@ -38,7 +38,16 @@ class MainViewBodyWidget extends StatelessWidget {
                         ),
                       )
                       .toList()),
-              erorr: (erorr) => Center(child: Text(erorr.errorMessage))),
+              erorr: (erorr) => Column(
+                    children: [
+                      Text(erorr.errorMessage),
+                      ElevatedButton(
+                          onPressed: () {
+                            getIt<MainCubit>().getServiceChannel();
+                          },
+                          child: Text("Reload"))
+                    ],
+                  )),
         );
       },
     );
