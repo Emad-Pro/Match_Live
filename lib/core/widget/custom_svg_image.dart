@@ -8,7 +8,8 @@ class CustomSvgImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SvgPicture.asset(
       imagePath,
-      colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+      colorFilter: ColorFilter.mode(
+          Theme.of(context).colorScheme.inversePrimary, BlendMode.srcIn),
     );
   }
 }
@@ -21,7 +22,7 @@ class CustomSvgWithColor extends StatelessWidget {
     return SvgPicture.asset(
       imagePath,
       colorFilter: ColorFilter.mode(
-          Theme.of(context).colorScheme.onSurface, BlendMode.srcIn),
+          Theme.of(context).colorScheme.inversePrimary, BlendMode.srcIn),
     );
   }
 }

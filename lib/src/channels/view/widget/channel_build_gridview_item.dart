@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:live_match/core/responsive/responsive_text.dart';
+import 'package:live_match/src/video_player/view/screens/video_player_screen.dart';
 
 class ChannelBuildGridViewItem extends StatelessWidget {
   const ChannelBuildGridViewItem({
@@ -17,7 +18,14 @@ class ChannelBuildGridViewItem extends StatelessWidget {
       padding: const EdgeInsets.all(5),
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
-        onTap: () {},
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => VideoPlayerScreen(
+                        url: links[0],
+                      )));
+        },
         child: Container(
             padding: const EdgeInsets.all(2),
             decoration: BoxDecoration(

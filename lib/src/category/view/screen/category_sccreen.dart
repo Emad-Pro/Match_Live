@@ -4,6 +4,7 @@ import 'package:live_match/core/widget/custom_sec_item.dart';
 import 'package:live_match/src/category/view/cubit/category_cubit.dart';
 
 import '../../../../core/get_it/service_locator.dart';
+import '../../../../core/responsive/responsive_text.dart';
 import '../../../channels/view/channel_screen.dart';
 
 class CategorySccreen extends StatelessWidget {
@@ -15,7 +16,12 @@ class CategorySccreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(titleCategory),
+        title: Text(
+          titleCategory,
+          style: TextStyle(
+              fontSize: getResponsiveFontSize(context, fontSize: 20),
+              fontWeight: FontWeight.bold),
+        ),
         actions: [
           IconButton(
             onPressed: () {},

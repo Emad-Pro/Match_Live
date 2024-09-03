@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:live_match/core/localizations/localizations_service.dart';
+import 'package:live_match/core/responsive/responsive_text.dart';
 
 mainAppBar(context) => AppBar(
-      title: const Text("Live Tv"),
+      title: Text(
+        "Live Tv",
+        style: TextStyle(
+            fontSize: getResponsiveFontSize(context, fontSize: 20),
+            fontWeight: FontWeight.bold),
+      ),
       actions: [
         IconButton(
             onPressed: () {
