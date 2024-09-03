@@ -4,15 +4,18 @@ import 'package:live_match/core/widget/custom_sec_item.dart';
 import 'package:live_match/src/category/view/cubit/category_cubit.dart';
 
 import '../../../../core/get_it/service_locator.dart';
+import '../../../channels/view/channel_screen.dart';
 
 class CategorySccreen extends StatelessWidget {
-  const CategorySccreen({super.key});
-
+  const CategorySccreen(
+      {super.key, required this.endPoing, required this.titleCategory});
+  final String endPoing;
+  final String titleCategory;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Sec Name"),
+        title: Text(titleCategory),
         actions: [
           IconButton(
             onPressed: () {},
@@ -20,23 +23,30 @@ class CategorySccreen extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.refresh),
+            icon: const Icon(Icons.refresh),
           )
         ],
       ),
       body: BlocBuilder<CategoryCubit, CategoryState>(
-        bloc: getIt<CategoryCubit>(),
+        bloc: getIt<CategoryCubit>()..fetchArabChannel(endPoing),
         builder: (context, state) {
           return state.when(
-              loaded: (model) => const Center(
+              loading: () => const Center(
                     child: CircularProgressIndicator(),
                   ),
-              loading: () => ListView.builder(
+              loaded: (model) => ListView.builder(
+                  itemCount: model.channel!.length,
                   itemBuilder: (context, index) => CustomSecItem(
-                        titleText: "titleText",
-                        onTap: () {},
-                        logoPath:
-                            'https://i.imgur.com/PVt8OPN_d.webp?maxwidth=760&fidelity=grand',
+                        titleText: model.channel![index].categoryName!,
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ChannelScreen(
+                                        channels:
+                                            model.channel![index].listChannel!,
+                                      )));
+                        },
                       )),
               erorr: (erorr) => Text(erorr));
         },

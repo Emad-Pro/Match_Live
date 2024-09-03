@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'category_cubit.dart';
+part of 'channel_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,25 +15,25 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$CategoryState {
+mixin _$ChannelState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(CategoryModel model) loaded,
+    required TResult Function(ChannelModel model) loaded,
     required TResult Function(String erorrMessage) erorr,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(CategoryModel model)? loaded,
+    TResult? Function(ChannelModel model)? loaded,
     TResult? Function(String erorrMessage)? erorr,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(CategoryModel model)? loaded,
+    TResult Function(ChannelModel model)? loaded,
     TResult Function(String erorrMessage)? erorr,
     required TResult orElse(),
   }) =>
@@ -63,23 +63,23 @@ mixin _$CategoryState {
 }
 
 /// @nodoc
-abstract class $CategoryStateCopyWith<$Res> {
-  factory $CategoryStateCopyWith(
-          CategoryState value, $Res Function(CategoryState) then) =
-      _$CategoryStateCopyWithImpl<$Res, CategoryState>;
+abstract class $ChannelStateCopyWith<$Res> {
+  factory $ChannelStateCopyWith(
+          ChannelState value, $Res Function(ChannelState) then) =
+      _$ChannelStateCopyWithImpl<$Res, ChannelState>;
 }
 
 /// @nodoc
-class _$CategoryStateCopyWithImpl<$Res, $Val extends CategoryState>
-    implements $CategoryStateCopyWith<$Res> {
-  _$CategoryStateCopyWithImpl(this._value, this._then);
+class _$ChannelStateCopyWithImpl<$Res, $Val extends ChannelState>
+    implements $ChannelStateCopyWith<$Res> {
+  _$ChannelStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of CategoryState
+  /// Create a copy of ChannelState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -92,30 +92,24 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$CategoryStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$ChannelStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CategoryState
+  /// Create a copy of ChannelState
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$LoadingImpl with DiagnosticableTreeMixin implements _Loading {
+class _$LoadingImpl implements _Loading {
   const _$LoadingImpl();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CategoryState.loading()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'CategoryState.loading'));
+  String toString() {
+    return 'ChannelState.loading()';
   }
 
   @override
@@ -131,7 +125,7 @@ class _$LoadingImpl with DiagnosticableTreeMixin implements _Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(CategoryModel model) loaded,
+    required TResult Function(ChannelModel model) loaded,
     required TResult Function(String erorrMessage) erorr,
   }) {
     return loading();
@@ -141,7 +135,7 @@ class _$LoadingImpl with DiagnosticableTreeMixin implements _Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(CategoryModel model)? loaded,
+    TResult? Function(ChannelModel model)? loaded,
     TResult? Function(String erorrMessage)? erorr,
   }) {
     return loading?.call();
@@ -151,7 +145,7 @@ class _$LoadingImpl with DiagnosticableTreeMixin implements _Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(CategoryModel model)? loaded,
+    TResult Function(ChannelModel model)? loaded,
     TResult Function(String erorrMessage)? erorr,
     required TResult orElse(),
   }) {
@@ -196,7 +190,7 @@ class _$LoadingImpl with DiagnosticableTreeMixin implements _Loading {
   }
 }
 
-abstract class _Loading implements CategoryState {
+abstract class _Loading implements ChannelState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -206,52 +200,44 @@ abstract class _$$LoadedImplCopyWith<$Res> {
           _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
       __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({CategoryModel model});
+  $Res call({ChannelModel model});
 }
 
 /// @nodoc
 class __$$LoadedImplCopyWithImpl<$Res>
-    extends _$CategoryStateCopyWithImpl<$Res, _$LoadedImpl>
+    extends _$ChannelStateCopyWithImpl<$Res, _$LoadedImpl>
     implements _$$LoadedImplCopyWith<$Res> {
   __$$LoadedImplCopyWithImpl(
       _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CategoryState
+  /// Create a copy of ChannelState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? model = freezed,
+    Object? model = null,
   }) {
     return _then(_$LoadedImpl(
-      freezed == model
+      null == model
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
-              as CategoryModel,
+              as ChannelModel,
     ));
   }
 }
 
 /// @nodoc
 
-class _$LoadedImpl with DiagnosticableTreeMixin implements _Loaded {
+class _$LoadedImpl implements _Loaded {
   const _$LoadedImpl(this.model);
 
   @override
-  final CategoryModel model;
+  final ChannelModel model;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CategoryState.loaded(model: $model)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CategoryState.loaded'))
-      ..add(DiagnosticsProperty('model', model));
+  String toString() {
+    return 'ChannelState.loaded(model: $model)';
   }
 
   @override
@@ -259,14 +245,13 @@ class _$LoadedImpl with DiagnosticableTreeMixin implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadedImpl &&
-            const DeepCollectionEquality().equals(other.model, model));
+            (identical(other.model, model) || other.model == model));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(model));
+  int get hashCode => Object.hash(runtimeType, model);
 
-  /// Create a copy of CategoryState
+  /// Create a copy of ChannelState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -278,7 +263,7 @@ class _$LoadedImpl with DiagnosticableTreeMixin implements _Loaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(CategoryModel model) loaded,
+    required TResult Function(ChannelModel model) loaded,
     required TResult Function(String erorrMessage) erorr,
   }) {
     return loaded(model);
@@ -288,7 +273,7 @@ class _$LoadedImpl with DiagnosticableTreeMixin implements _Loaded {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(CategoryModel model)? loaded,
+    TResult? Function(ChannelModel model)? loaded,
     TResult? Function(String erorrMessage)? erorr,
   }) {
     return loaded?.call(model);
@@ -298,7 +283,7 @@ class _$LoadedImpl with DiagnosticableTreeMixin implements _Loaded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(CategoryModel model)? loaded,
+    TResult Function(ChannelModel model)? loaded,
     TResult Function(String erorrMessage)? erorr,
     required TResult orElse(),
   }) {
@@ -343,12 +328,12 @@ class _$LoadedImpl with DiagnosticableTreeMixin implements _Loaded {
   }
 }
 
-abstract class _Loaded implements CategoryState {
-  const factory _Loaded(final CategoryModel model) = _$LoadedImpl;
+abstract class _Loaded implements ChannelState {
+  const factory _Loaded(final ChannelModel model) = _$LoadedImpl;
 
-  CategoryModel get model;
+  ChannelModel get model;
 
-  /// Create a copy of CategoryState
+  /// Create a copy of ChannelState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
@@ -366,13 +351,13 @@ abstract class _$$ErorrImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErorrImplCopyWithImpl<$Res>
-    extends _$CategoryStateCopyWithImpl<$Res, _$ErorrImpl>
+    extends _$ChannelStateCopyWithImpl<$Res, _$ErorrImpl>
     implements _$$ErorrImplCopyWith<$Res> {
   __$$ErorrImplCopyWithImpl(
       _$ErorrImpl _value, $Res Function(_$ErorrImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CategoryState
+  /// Create a copy of ChannelState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -390,23 +375,15 @@ class __$$ErorrImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErorrImpl with DiagnosticableTreeMixin implements _Erorr {
+class _$ErorrImpl implements _Erorr {
   const _$ErorrImpl(this.erorrMessage);
 
   @override
   final String erorrMessage;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CategoryState.erorr(erorrMessage: $erorrMessage)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CategoryState.erorr'))
-      ..add(DiagnosticsProperty('erorrMessage', erorrMessage));
+  String toString() {
+    return 'ChannelState.erorr(erorrMessage: $erorrMessage)';
   }
 
   @override
@@ -421,7 +398,7 @@ class _$ErorrImpl with DiagnosticableTreeMixin implements _Erorr {
   @override
   int get hashCode => Object.hash(runtimeType, erorrMessage);
 
-  /// Create a copy of CategoryState
+  /// Create a copy of ChannelState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -433,7 +410,7 @@ class _$ErorrImpl with DiagnosticableTreeMixin implements _Erorr {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(CategoryModel model) loaded,
+    required TResult Function(ChannelModel model) loaded,
     required TResult Function(String erorrMessage) erorr,
   }) {
     return erorr(erorrMessage);
@@ -443,7 +420,7 @@ class _$ErorrImpl with DiagnosticableTreeMixin implements _Erorr {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(CategoryModel model)? loaded,
+    TResult? Function(ChannelModel model)? loaded,
     TResult? Function(String erorrMessage)? erorr,
   }) {
     return erorr?.call(erorrMessage);
@@ -453,7 +430,7 @@ class _$ErorrImpl with DiagnosticableTreeMixin implements _Erorr {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(CategoryModel model)? loaded,
+    TResult Function(ChannelModel model)? loaded,
     TResult Function(String erorrMessage)? erorr,
     required TResult orElse(),
   }) {
@@ -498,12 +475,12 @@ class _$ErorrImpl with DiagnosticableTreeMixin implements _Erorr {
   }
 }
 
-abstract class _Erorr implements CategoryState {
+abstract class _Erorr implements ChannelState {
   const factory _Erorr(final String erorrMessage) = _$ErorrImpl;
 
   String get erorrMessage;
 
-  /// Create a copy of CategoryState
+  /// Create a copy of ChannelState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErorrImplCopyWith<_$ErorrImpl> get copyWith =>
