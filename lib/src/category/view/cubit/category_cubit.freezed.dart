@@ -104,12 +104,18 @@ class __$$LoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingImpl implements _Loading {
+class _$LoadingImpl with DiagnosticableTreeMixin implements _Loading {
   const _$LoadingImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'CategoryState.loading()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'CategoryState.loading'));
   }
 
   @override
@@ -216,10 +222,10 @@ class __$$LoadedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? model = null,
+    Object? model = freezed,
   }) {
     return _then(_$LoadedImpl(
-      null == model
+      freezed == model
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
               as CategoryModel,
@@ -229,15 +235,23 @@ class __$$LoadedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadedImpl implements _Loaded {
+class _$LoadedImpl with DiagnosticableTreeMixin implements _Loaded {
   const _$LoadedImpl(this.model);
 
   @override
   final CategoryModel model;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'CategoryState.loaded(model: $model)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'CategoryState.loaded'))
+      ..add(DiagnosticsProperty('model', model));
   }
 
   @override
@@ -245,11 +259,12 @@ class _$LoadedImpl implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadedImpl &&
-            (identical(other.model, model) || other.model == model));
+            const DeepCollectionEquality().equals(other.model, model));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, model);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(model));
 
   /// Create a copy of CategoryState
   /// with the given fields replaced by the non-null parameter values.
@@ -375,15 +390,23 @@ class __$$ErorrImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErorrImpl implements _Erorr {
+class _$ErorrImpl with DiagnosticableTreeMixin implements _Erorr {
   const _$ErorrImpl(this.erorrMessage);
 
   @override
   final String erorrMessage;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'CategoryState.erorr(erorrMessage: $erorrMessage)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'CategoryState.erorr'))
+      ..add(DiagnosticsProperty('erorrMessage', erorrMessage));
   }
 
   @override

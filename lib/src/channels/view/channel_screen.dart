@@ -1,33 +1,21 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:live_match/src/channels/view/cubit/channel_cubit.dart';
 
-import '../../../core/get_it/service_locator.dart';
+import 'package:live_match/src/category/model/model/category_model/list_channel.dart';
+
 import 'widget/channel_gridview.dart';
 
 class ChannelScreen extends StatelessWidget {
-  const ChannelScreen({Key? key}) : super(key: key);
-
+  const ChannelScreen({super.key, required this.channels});
+  final List<ListChannel> channels;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Mbc3"),
+          title: Text(channels[0].groupTitle!),
         ),
-        body: BlocBuilder<ChannelCubit, ChannelState>(
-          bloc: getIt<ChannelCubit>(),
-          builder: (context, state) {
-            return state.map(loading: (state) {
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
-            }, loaded: (state) {
-              return const ChannelGridView();
-            }, erorr: (state) {
-              return Text(state.erorrMessage);
-            });
-          },
+        body: ChannelGridView(
+          channel: channels,
         ));
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:live_match/core/responsive/responsive_text.dart';
 
 class ChannelBuildGridViewItem extends StatelessWidget {
   const ChannelBuildGridViewItem({
@@ -34,9 +35,14 @@ class ChannelBuildGridViewItem extends StatelessWidget {
                         height: 35,
                       )
                     : const Icon(Icons.wifi_channel),
-                const Text(
-                  "asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  name!,
                   overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                      fontSize: getResponsiveFontSize(context, fontSize: 14)),
                   maxLines: 1,
                 )
               ],

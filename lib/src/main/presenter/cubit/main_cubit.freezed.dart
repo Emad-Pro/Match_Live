@@ -17,61 +17,43 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$MainState {
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            bool isPlaying, Duration currentPosition, Duration totalDuration)
-        $default, {
-    required TResult Function() initial,
+  TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function() erorr,
+    required TResult Function(MainModel mainModel) success,
+    required TResult Function(String errorMessage) erorr,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            bool isPlaying, Duration currentPosition, Duration totalDuration)?
-        $default, {
-    TResult? Function()? initial,
+  TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function()? erorr,
+    TResult? Function(MainModel mainModel)? success,
+    TResult? Function(String errorMessage)? erorr,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            bool isPlaying, Duration currentPosition, Duration totalDuration)?
-        $default, {
-    TResult Function()? initial,
+  TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function()? erorr,
+    TResult Function(MainModel mainModel)? success,
+    TResult Function(String errorMessage)? erorr,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_MainState value) $default, {
-    required TResult Function(_Initial value) initial,
+  TResult map<TResult extends Object?>({
     required TResult Function(_loading value) loading,
     required TResult Function(_success value) success,
     required TResult Function(_erorr value) erorr,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_MainState value)? $default, {
-    TResult? Function(_Initial value)? initial,
+  TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_loading value)? loading,
     TResult? Function(_success value)? success,
     TResult? Function(_erorr value)? erorr,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_MainState value)? $default, {
-    TResult Function(_Initial value)? initial,
+  TResult maybeMap<TResult extends Object?>({
     TResult Function(_loading value)? loading,
     TResult Function(_success value)? success,
     TResult Function(_erorr value)? erorr,
@@ -98,327 +80,6 @@ class _$MainStateCopyWithImpl<$Res, $Val extends MainState>
 
   /// Create a copy of MainState
   /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-abstract class _$$MainStateImplCopyWith<$Res> {
-  factory _$$MainStateImplCopyWith(
-          _$MainStateImpl value, $Res Function(_$MainStateImpl) then) =
-      __$$MainStateImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({bool isPlaying, Duration currentPosition, Duration totalDuration});
-}
-
-/// @nodoc
-class __$$MainStateImplCopyWithImpl<$Res>
-    extends _$MainStateCopyWithImpl<$Res, _$MainStateImpl>
-    implements _$$MainStateImplCopyWith<$Res> {
-  __$$MainStateImplCopyWithImpl(
-      _$MainStateImpl _value, $Res Function(_$MainStateImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of MainState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? isPlaying = null,
-    Object? currentPosition = null,
-    Object? totalDuration = null,
-  }) {
-    return _then(_$MainStateImpl(
-      isPlaying: null == isPlaying
-          ? _value.isPlaying
-          : isPlaying // ignore: cast_nullable_to_non_nullable
-              as bool,
-      currentPosition: null == currentPosition
-          ? _value.currentPosition
-          : currentPosition // ignore: cast_nullable_to_non_nullable
-              as Duration,
-      totalDuration: null == totalDuration
-          ? _value.totalDuration
-          : totalDuration // ignore: cast_nullable_to_non_nullable
-              as Duration,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$MainStateImpl implements _MainState {
-  const _$MainStateImpl(
-      {required this.isPlaying,
-      required this.currentPosition,
-      required this.totalDuration});
-
-  @override
-  final bool isPlaying;
-  @override
-  final Duration currentPosition;
-  @override
-  final Duration totalDuration;
-
-  @override
-  String toString() {
-    return 'MainState(isPlaying: $isPlaying, currentPosition: $currentPosition, totalDuration: $totalDuration)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$MainStateImpl &&
-            (identical(other.isPlaying, isPlaying) ||
-                other.isPlaying == isPlaying) &&
-            (identical(other.currentPosition, currentPosition) ||
-                other.currentPosition == currentPosition) &&
-            (identical(other.totalDuration, totalDuration) ||
-                other.totalDuration == totalDuration));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, isPlaying, currentPosition, totalDuration);
-
-  /// Create a copy of MainState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$MainStateImplCopyWith<_$MainStateImpl> get copyWith =>
-      __$$MainStateImplCopyWithImpl<_$MainStateImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            bool isPlaying, Duration currentPosition, Duration totalDuration)
-        $default, {
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function() erorr,
-  }) {
-    return $default(isPlaying, currentPosition, totalDuration);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            bool isPlaying, Duration currentPosition, Duration totalDuration)?
-        $default, {
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function()? erorr,
-  }) {
-    return $default?.call(isPlaying, currentPosition, totalDuration);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            bool isPlaying, Duration currentPosition, Duration totalDuration)?
-        $default, {
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function()? erorr,
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default(isPlaying, currentPosition, totalDuration);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_MainState value) $default, {
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_loading value) loading,
-    required TResult Function(_success value) success,
-    required TResult Function(_erorr value) erorr,
-  }) {
-    return $default(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_MainState value)? $default, {
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_loading value)? loading,
-    TResult? Function(_success value)? success,
-    TResult? Function(_erorr value)? erorr,
-  }) {
-    return $default?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_MainState value)? $default, {
-    TResult Function(_Initial value)? initial,
-    TResult Function(_loading value)? loading,
-    TResult Function(_success value)? success,
-    TResult Function(_erorr value)? erorr,
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _MainState implements MainState {
-  const factory _MainState(
-      {required final bool isPlaying,
-      required final Duration currentPosition,
-      required final Duration totalDuration}) = _$MainStateImpl;
-
-  bool get isPlaying;
-  Duration get currentPosition;
-  Duration get totalDuration;
-
-  /// Create a copy of MainState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MainStateImplCopyWith<_$MainStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$MainStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of MainState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
-
-  @override
-  String toString() {
-    return 'MainState.initial()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            bool isPlaying, Duration currentPosition, Duration totalDuration)
-        $default, {
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function() erorr,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            bool isPlaying, Duration currentPosition, Duration totalDuration)?
-        $default, {
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function()? erorr,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            bool isPlaying, Duration currentPosition, Duration totalDuration)?
-        $default, {
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function()? erorr,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_MainState value) $default, {
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_loading value) loading,
-    required TResult Function(_success value) success,
-    required TResult Function(_erorr value) erorr,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_MainState value)? $default, {
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_loading value)? loading,
-    TResult? Function(_success value)? success,
-    TResult? Function(_erorr value)? erorr,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_MainState value)? $default, {
-    TResult Function(_Initial value)? initial,
-    TResult Function(_loading value)? loading,
-    TResult Function(_success value)? success,
-    TResult Function(_erorr value)? erorr,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements MainState {
-  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
@@ -461,42 +122,30 @@ class _$loadingImpl implements _loading {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            bool isPlaying, Duration currentPosition, Duration totalDuration)
-        $default, {
-    required TResult Function() initial,
+  TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function() erorr,
+    required TResult Function(MainModel mainModel) success,
+    required TResult Function(String errorMessage) erorr,
   }) {
     return loading();
   }
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            bool isPlaying, Duration currentPosition, Duration totalDuration)?
-        $default, {
-    TResult? Function()? initial,
+  TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function()? erorr,
+    TResult? Function(MainModel mainModel)? success,
+    TResult? Function(String errorMessage)? erorr,
   }) {
     return loading?.call();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            bool isPlaying, Duration currentPosition, Duration totalDuration)?
-        $default, {
-    TResult Function()? initial,
+  TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function()? erorr,
+    TResult Function(MainModel mainModel)? success,
+    TResult Function(String errorMessage)? erorr,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -507,9 +156,7 @@ class _$loadingImpl implements _loading {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_MainState value) $default, {
-    required TResult Function(_Initial value) initial,
+  TResult map<TResult extends Object?>({
     required TResult Function(_loading value) loading,
     required TResult Function(_success value) success,
     required TResult Function(_erorr value) erorr,
@@ -519,9 +166,7 @@ class _$loadingImpl implements _loading {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_MainState value)? $default, {
-    TResult? Function(_Initial value)? initial,
+  TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_loading value)? loading,
     TResult? Function(_success value)? success,
     TResult? Function(_erorr value)? erorr,
@@ -531,9 +176,7 @@ class _$loadingImpl implements _loading {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_MainState value)? $default, {
-    TResult Function(_Initial value)? initial,
+  TResult maybeMap<TResult extends Object?>({
     TResult Function(_loading value)? loading,
     TResult Function(_success value)? success,
     TResult Function(_erorr value)? erorr,
@@ -555,6 +198,8 @@ abstract class _$$successImplCopyWith<$Res> {
   factory _$$successImplCopyWith(
           _$successImpl value, $Res Function(_$successImpl) then) =
       __$$successImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({MainModel mainModel});
 }
 
 /// @nodoc
@@ -567,78 +212,90 @@ class __$$successImplCopyWithImpl<$Res>
 
   /// Create a copy of MainState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? mainModel = null,
+  }) {
+    return _then(_$successImpl(
+      null == mainModel
+          ? _value.mainModel
+          : mainModel // ignore: cast_nullable_to_non_nullable
+              as MainModel,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$successImpl implements _success {
-  const _$successImpl();
+  const _$successImpl(this.mainModel);
+
+  @override
+  final MainModel mainModel;
 
   @override
   String toString() {
-    return 'MainState.success()';
+    return 'MainState.success(mainModel: $mainModel)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$successImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$successImpl &&
+            (identical(other.mainModel, mainModel) ||
+                other.mainModel == mainModel));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, mainModel);
+
+  /// Create a copy of MainState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$successImplCopyWith<_$successImpl> get copyWith =>
+      __$$successImplCopyWithImpl<_$successImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            bool isPlaying, Duration currentPosition, Duration totalDuration)
-        $default, {
-    required TResult Function() initial,
+  TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function() erorr,
+    required TResult Function(MainModel mainModel) success,
+    required TResult Function(String errorMessage) erorr,
   }) {
-    return success();
+    return success(mainModel);
   }
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            bool isPlaying, Duration currentPosition, Duration totalDuration)?
-        $default, {
-    TResult? Function()? initial,
+  TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function()? erorr,
+    TResult? Function(MainModel mainModel)? success,
+    TResult? Function(String errorMessage)? erorr,
   }) {
-    return success?.call();
+    return success?.call(mainModel);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            bool isPlaying, Duration currentPosition, Duration totalDuration)?
-        $default, {
-    TResult Function()? initial,
+  TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function()? erorr,
+    TResult Function(MainModel mainModel)? success,
+    TResult Function(String errorMessage)? erorr,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success();
+      return success(mainModel);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_MainState value) $default, {
-    required TResult Function(_Initial value) initial,
+  TResult map<TResult extends Object?>({
     required TResult Function(_loading value) loading,
     required TResult Function(_success value) success,
     required TResult Function(_erorr value) erorr,
@@ -648,9 +305,7 @@ class _$successImpl implements _success {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_MainState value)? $default, {
-    TResult? Function(_Initial value)? initial,
+  TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_loading value)? loading,
     TResult? Function(_success value)? success,
     TResult? Function(_erorr value)? erorr,
@@ -660,9 +315,7 @@ class _$successImpl implements _success {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_MainState value)? $default, {
-    TResult Function(_Initial value)? initial,
+  TResult maybeMap<TResult extends Object?>({
     TResult Function(_loading value)? loading,
     TResult Function(_success value)? success,
     TResult Function(_erorr value)? erorr,
@@ -676,7 +329,15 @@ class _$successImpl implements _success {
 }
 
 abstract class _success implements MainState {
-  const factory _success() = _$successImpl;
+  const factory _success(final MainModel mainModel) = _$successImpl;
+
+  MainModel get mainModel;
+
+  /// Create a copy of MainState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$successImplCopyWith<_$successImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -684,6 +345,8 @@ abstract class _$$erorrImplCopyWith<$Res> {
   factory _$$erorrImplCopyWith(
           _$erorrImpl value, $Res Function(_$erorrImpl) then) =
       __$$erorrImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String errorMessage});
 }
 
 /// @nodoc
@@ -696,78 +359,90 @@ class __$$erorrImplCopyWithImpl<$Res>
 
   /// Create a copy of MainState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorMessage = null,
+  }) {
+    return _then(_$erorrImpl(
+      null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$erorrImpl implements _erorr {
-  const _$erorrImpl();
+  const _$erorrImpl(this.errorMessage);
+
+  @override
+  final String errorMessage;
 
   @override
   String toString() {
-    return 'MainState.erorr()';
+    return 'MainState.erorr(errorMessage: $errorMessage)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$erorrImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$erorrImpl &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, errorMessage);
+
+  /// Create a copy of MainState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$erorrImplCopyWith<_$erorrImpl> get copyWith =>
+      __$$erorrImplCopyWithImpl<_$erorrImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            bool isPlaying, Duration currentPosition, Duration totalDuration)
-        $default, {
-    required TResult Function() initial,
+  TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function() erorr,
+    required TResult Function(MainModel mainModel) success,
+    required TResult Function(String errorMessage) erorr,
   }) {
-    return erorr();
+    return erorr(errorMessage);
   }
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            bool isPlaying, Duration currentPosition, Duration totalDuration)?
-        $default, {
-    TResult? Function()? initial,
+  TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function()? erorr,
+    TResult? Function(MainModel mainModel)? success,
+    TResult? Function(String errorMessage)? erorr,
   }) {
-    return erorr?.call();
+    return erorr?.call(errorMessage);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            bool isPlaying, Duration currentPosition, Duration totalDuration)?
-        $default, {
-    TResult Function()? initial,
+  TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function()? erorr,
+    TResult Function(MainModel mainModel)? success,
+    TResult Function(String errorMessage)? erorr,
     required TResult orElse(),
   }) {
     if (erorr != null) {
-      return erorr();
+      return erorr(errorMessage);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_MainState value) $default, {
-    required TResult Function(_Initial value) initial,
+  TResult map<TResult extends Object?>({
     required TResult Function(_loading value) loading,
     required TResult Function(_success value) success,
     required TResult Function(_erorr value) erorr,
@@ -777,9 +452,7 @@ class _$erorrImpl implements _erorr {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_MainState value)? $default, {
-    TResult? Function(_Initial value)? initial,
+  TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_loading value)? loading,
     TResult? Function(_success value)? success,
     TResult? Function(_erorr value)? erorr,
@@ -789,9 +462,7 @@ class _$erorrImpl implements _erorr {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_MainState value)? $default, {
-    TResult Function(_Initial value)? initial,
+  TResult maybeMap<TResult extends Object?>({
     TResult Function(_loading value)? loading,
     TResult Function(_success value)? success,
     TResult Function(_erorr value)? erorr,
@@ -805,5 +476,13 @@ class _$erorrImpl implements _erorr {
 }
 
 abstract class _erorr implements MainState {
-  const factory _erorr() = _$erorrImpl;
+  const factory _erorr(final String errorMessage) = _$erorrImpl;
+
+  String get errorMessage;
+
+  /// Create a copy of MainState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$erorrImplCopyWith<_$erorrImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
