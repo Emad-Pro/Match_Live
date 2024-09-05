@@ -27,7 +27,7 @@ class CustomTileWidget extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: Text(actionTitleTileText),
           ),
-          Spacer(),
+          const Spacer(),
           actionTileWidget
         ],
       ),

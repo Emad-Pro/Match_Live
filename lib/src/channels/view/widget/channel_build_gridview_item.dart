@@ -1,14 +1,16 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:live_match/core/responsive/responsive_text.dart';
 import 'package:live_match/src/video_player/view/screens/video_player_screen.dart';
 
 class ChannelBuildGridViewItem extends StatelessWidget {
   const ChannelBuildGridViewItem({
-    Key? key,
+    super.key,
     required this.links,
     this.logo,
     required this.name,
-  }) : super(key: key);
+  });
   final List<String> links;
   final String? logo;
   final String? name;
@@ -19,12 +21,21 @@ class ChannelBuildGridViewItem extends StatelessWidget {
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
         onTap: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => VideoPlayerScreen(
-                        url: links[0],
-                      )));
+          if (Platform.isWindows) {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => VideoPlayerScreen(
+                          url: links[0],
+                        )));
+          } else {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => VideoPlayerScreen(
+                          url: links[0],
+                        )));
+          }
         },
         child: Container(
             padding: const EdgeInsets.all(2),
@@ -43,7 +54,7 @@ class ChannelBuildGridViewItem extends StatelessWidget {
                         height: 35,
                       )
                     : const Icon(Icons.wifi_channel),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text(

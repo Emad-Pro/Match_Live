@@ -6,10 +6,10 @@ import 'package:live_match/core/get_it/service_locator.dart';
 import 'package:live_match/core/localizations/localizations_service.dart';
 import 'package:live_match/core/shared_pref/shared_pref.dart';
 import 'package:live_match/core/theme/service/theme_service.dart';
-import 'package:live_match/src/main/view/screen/main_screen.dart';
 
 import 'core/localizations/cubit/localizations_cubit.dart';
 import 'core/theme/cubit/theme_cubit.dart';
+import 'src/splash_screen/view/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
               theme: ThemeService.lightTheme(locale),
               darkTheme: ThemeService.darkTheme(locale),
               themeMode: ThemeService().themeApp(),
-              home: const MainScreen(),
+              home: const SplashScreen(),
             );
           },
         );

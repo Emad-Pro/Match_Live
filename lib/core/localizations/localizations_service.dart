@@ -6,7 +6,7 @@ import 'package:live_match/core/shared_pref/shared_pref.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LocalizationsService {
-  static Locale locale = Locale("en");
+  static Locale locale = const Locale("en");
   late Map<String, String> _localizedStrings;
 
   LocalizationsService();

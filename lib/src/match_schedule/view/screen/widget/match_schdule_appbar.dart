@@ -51,5 +51,5 @@ class MatchSchduleAppBar extends StatelessWidget
   }
 
   @override
-  Size get preferredSize => Size(double.infinity, 60);
+  Size get preferredSize => const Size(double.infinity, 60);
 }

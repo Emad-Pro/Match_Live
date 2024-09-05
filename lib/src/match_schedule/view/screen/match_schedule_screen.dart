@@ -7,7 +7,7 @@ import 'widget/match_schedule_date_view.dart';
 import 'widget/match_schedule_list_view_matches.dart';
 
 class MatchScheduleScreen extends StatelessWidget {
-  const MatchScheduleScreen({Key? key}) : super(key: key);
+  const MatchScheduleScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

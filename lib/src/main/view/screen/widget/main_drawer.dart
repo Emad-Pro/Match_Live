@@ -38,15 +38,17 @@ class MainDrawer extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MatchScheduleScreen()));
+                      builder: (context) => const MatchScheduleScreen()));
             },
           ),
           CustomListTile(
             titleText: "Last News".tr(context),
             leadingIcon: Icons.newspaper,
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => LastNewsScreen()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const LastNewsScreen()));
             },
           ),
           CustomListTile(
@@ -63,8 +65,10 @@ class MainDrawer extends StatelessWidget {
             titleText: "Settings".tr(context),
             leadingIcon: Icons.settings,
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SettingsScreen()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const SettingsScreen()));
             },
           )
         ],

@@ -6,5 +6,5 @@ part 'channel_state.dart';
 part 'channel_cubit.freezed.dart';
 
 class ChannelCubit extends Cubit<ChannelState> {
-  ChannelCubit() : super(ChannelState.loading());
+  ChannelCubit() : super(const ChannelState.loading());
 }

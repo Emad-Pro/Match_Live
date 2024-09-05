@@ -17,7 +17,7 @@ class MainRepositoryImp extends MainRepository {
   Future<ApiResult> fetchServerChannel() async {
     try {
       final response = await _dio.get(ApiConst.menuEndpoing);
-      // print(jsonDecode(response.data));
+      print(response);
       return ApiResult<MainModel>.success(
           MainModel.fromJson(jsonDecode(response.data)));
     } catch (error) {

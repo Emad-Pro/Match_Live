@@ -16,7 +16,7 @@ class LastNewsBuildListViewtem extends StatelessWidget {
           showDialog(
               context: context,
               builder: (context) => AlertDialog(
-                    contentPadding: EdgeInsets.all(0.0),
+                    contentPadding: const EdgeInsets.all(0.0),
                     content: SizedBox(
                       width: double.infinity,
                       child: LastNewsShowDetailsNewsDailog(

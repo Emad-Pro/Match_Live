@@ -11,6 +11,9 @@ class CustomSecItem extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
       decoration: BoxDecoration(
+          color: Theme.of(context).brightness == Brightness.light
+              ? Colors.red.shade400
+              : Colors.red.shade900,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(color: Theme.of(context).colorScheme.primary)),
       child: InkWell(

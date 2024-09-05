@@ -9,7 +9,7 @@ part 'category_state.dart';
 part 'category_cubit.freezed.dart';
 
 class CategoryCubit extends Cubit<CategoryState> {
-  CategoryCubit(this.categoryRepository) : super(CategoryState.loading());
+  CategoryCubit(this.categoryRepository) : super(const CategoryState.loading());
   final CategoryRepository categoryRepository;
   fetchArabChannel(String url) async {
     final result = await categoryRepository.getArabicChannel(url);
