@@ -11,6 +11,7 @@ class MainCubit extends Cubit<MainState> {
   MainCubit(this.mainRepository) : super(const MainState.loading());
   final MainRepository mainRepository;
   getServiceChannel() async {
+    emit(MainState.loading());
     final result = await mainRepository.fetchServerChannel();
     result.when(success: (success) {
       emit(MainState.success(success));

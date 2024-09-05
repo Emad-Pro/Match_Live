@@ -17,7 +17,7 @@ class CategoryRepositoryImp extends CategoryRepository {
   Future<ApiResult> getArabicChannel(String url) async {
     try {
       final response = await _dio.get("${ApiConst.baseUrl}$url");
-      print("${ApiConst.baseUrl}$url");
+
       return ApiResult.success(
           CategoryModel.fromJson(jsonDecode(response.data)));
     } catch (e) {

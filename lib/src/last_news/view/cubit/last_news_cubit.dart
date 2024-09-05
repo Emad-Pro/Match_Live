@@ -7,7 +7,7 @@ part 'last_news_state.dart';
 part 'last_news_cubit.freezed.dart';
 
 class LastNewsCubit extends Cubit<LastNewsState> {
-  LastNewsCubit() : super(LastNewsState.initial());
+  LastNewsCubit() : super(const LastNewsState.initial());
   final List<LastNewsModel> news = [
     LastNewsModel(
         contentAr:
