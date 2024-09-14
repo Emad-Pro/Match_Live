@@ -44,7 +44,6 @@ class MatchScheduleBuildListViewItem extends StatelessWidget {
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                              color: Colors.red,
                               borderRadius: BorderRadius.circular(2)),
                           padding: const EdgeInsets.symmetric(
                               horizontal: 5, vertical: 2),

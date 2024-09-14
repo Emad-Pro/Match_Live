@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
 import 'package:better_player/better_player.dart';
+import 'package:flutter/material.dart';
 
 import '../../../core/enum/request_state.dart';
 import '../model/player_service/player_service.dart';
@@ -33,6 +34,14 @@ class VideoPlayerCubit extends Cubit<VideoPlayerState> {
 
       _controller = BetterPlayerController(
         BetterPlayerConfiguration(
+          errorBuilder: (context, error) {
+            emit(state.copyWith(
+              requestState: RequestState.erorr,
+              errorMessage: error,
+            ));
+            return Container();
+          },
+          handleLifecycle: true,
           translations: [
             BetterPlayerTranslations(
               languageCode: "ar",

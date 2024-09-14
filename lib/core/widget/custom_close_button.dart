@@ -13,7 +13,8 @@ class CustomCloseButton extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(4), color: Colors.red[900]),
+          borderRadius: BorderRadius.circular(4),
+        ),
         child: const Icon(
           Icons.close,
           color: Colors.white,

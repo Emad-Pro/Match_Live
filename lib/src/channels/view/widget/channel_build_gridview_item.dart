@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:live_match/core/responsive/responsive_text.dart';
 import 'package:live_match/src/video_player/view/screens/video_player_screen.dart';
 
+import '../../../../core/m3u8_player.dart';
+
 class ChannelBuildGridViewItem extends StatelessWidget {
   const ChannelBuildGridViewItem({
     super.key,
@@ -60,9 +62,10 @@ class ChannelBuildGridViewItem extends StatelessWidget {
                 Text(
                   name!,
                   overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.left,
                   style: TextStyle(
                       fontSize: getResponsiveFontSize(context, fontSize: 14)),
-                  maxLines: 1,
+                  maxLines: 2,
                 )
               ],
             )),

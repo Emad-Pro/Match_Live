@@ -4,21 +4,13 @@ import '../../shared_pref/shared_pref.dart';
 class ThemeService {
   static ThemeData lightTheme(Locale locale) => ThemeData(
         fontFamily: locale.languageCode == 'ar' ? 'nato_kufe' : 'noto_serif',
-        drawerTheme: DrawerThemeData(),
-        colorScheme: ColorScheme.fromSeed(
-          brightness: Brightness.light,
-          primary: Colors.red,
-          seedColor: const Color.fromARGB(255, 248, 17, 0),
-        ),
+        brightness: Brightness.light,
       );
 
   static ThemeData darkTheme(Locale locale) => ThemeData(
+        brightness: Brightness.dark,
         // اللون الأساسي الأحمر
-        colorScheme: ColorScheme.fromSeed(
-          primary: const Color.fromARGB(255, 153, 41, 33),
-          brightness: Brightness.dark,
-          seedColor: const Color.fromARGB(255, 248, 17, 0),
-        ),
+
         // اللون الأساسي الداكن الأحمر
         fontFamily: locale.languageCode == 'ar' ? 'nato_kufe' : 'noto_serif',
       );

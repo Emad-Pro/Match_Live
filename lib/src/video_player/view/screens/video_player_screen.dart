@@ -28,7 +28,13 @@ class VideoPlayerScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(state.errorMessage),
+                    Icon(
+                      Icons.error,
+                      size: 50,
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
                     ElevatedButton(
                         onPressed: () {
                           Navigator.pop(context);
