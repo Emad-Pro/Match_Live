@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
               ],
               theme: ThemeService.lightTheme(locale),
               darkTheme: ThemeService.darkTheme(locale),
-              themeMode: ThemeService().themeApp(),
+              themeMode: ThemeMode.light,
               home: const SplashScreen(),
             );
           },

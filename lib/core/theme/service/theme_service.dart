@@ -2,26 +2,11 @@ import 'package:flutter/material.dart';
 import '../../shared_pref/shared_pref.dart';
 
 class ThemeService {
-  static ThemeData lightTheme(Locale locale) => ThemeData(
-        fontFamily: locale.languageCode == 'ar' ? 'nato_kufe' : 'noto_serif',
-        drawerTheme: DrawerThemeData(),
-        colorScheme: ColorScheme.fromSeed(
-          brightness: Brightness.light,
-          primary: Colors.red,
-          seedColor: const Color.fromARGB(255, 248, 17, 0),
-        ),
-      );
+  static ThemeData lightTheme(Locale locale) =>
+      ThemeData.light(useMaterial3: true);
 
-  static ThemeData darkTheme(Locale locale) => ThemeData(
-        // اللون الأساسي الأحمر
-        colorScheme: ColorScheme.fromSeed(
-          primary: const Color.fromARGB(255, 153, 41, 33),
-          brightness: Brightness.dark,
-          seedColor: const Color.fromARGB(255, 248, 17, 0),
-        ),
-        // اللون الأساسي الداكن الأحمر
-        fontFamily: locale.languageCode == 'ar' ? 'nato_kufe' : 'noto_serif',
-      );
+  static ThemeData darkTheme(Locale locale) =>
+      ThemeData.dark(useMaterial3: true);
   // var Key Theme
   static const String _themeKey = 'theme_key';
 

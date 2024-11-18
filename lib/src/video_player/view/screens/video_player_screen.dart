@@ -19,6 +19,8 @@ class VideoPlayerScreen extends StatelessWidget {
           child: BlocBuilder<VideoPlayerCubit, VideoPlayerState>(
               builder: (context, state) {
             switch (state.requestState) {
+              case RequestState.init:
+                return const Center(child: CircularProgressIndicator());
               case RequestState.loading:
                 return const Center(child: CircularProgressIndicator());
               case RequestState.success:
