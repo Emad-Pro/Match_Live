@@ -1,17 +1,19 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-
 import '../localizations_service.dart';
 
-part 'localizations_state.dart';
-part 'localizations_cubit.freezed.dart';
-
-class LocalizationsCubit extends Cubit<LocalizationsState> {
-  LocalizationsCubit() : super(LocalizationsState.initial());
+class LocalizationsCubit extends Cubit<Locale> {
+  LocalizationsCubit() : super(const Locale("ar")) {
+    loadLanguage();
+  }
 
   Future<void> changeLocale(Locale locale) async {
-    emit(state.copyWith(locale: locale));
-    await LocalizationsService.setLocaleCode(locale.languageCode);
+    emit(locale);
+    await AppLocaliztions.setLocaleCode(locale.languageCode);
+  }
+
+  loadLanguage() async {
+    final locale = await AppLocaliztions.getLocaleCode();
+    emit(locale);
   }
 }

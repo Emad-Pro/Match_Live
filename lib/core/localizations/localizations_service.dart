@@ -1,27 +1,26 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:live_match/core/shared_pref/shared_pref.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-class LocalizationsService {
+import 'dart:convert';
+
+import '../shared_pref/shared_pref.dart';
+
+class AppLocaliztions {
   static Locale locale = const Locale("en");
   late Map<String, String> _localizedStrings;
 
-  LocalizationsService();
+  AppLocaliztions();
 
-  static LocalizationsService of(BuildContext context) {
-    return Localizations.of<LocalizationsService>(
-        context, LocalizationsService)!;
+  static AppLocaliztions of(BuildContext context) {
+    return Localizations.of<AppLocaliztions>(context, AppLocaliztions)!;
   }
 
-  static const LocalizationsDelegate<LocalizationsService> delegate =
-      _LocalizationsServiceDelegate();
+  static const LocalizationsDelegate<AppLocaliztions> delegate =
+      _AppLocaliztionsDelegate();
 
   Future<void> loadJsonLanguage() async {
-    final jsonString = await rootBundle.loadString(
-        'assets/lang/${LocalizationsService.locale.languageCode}.json');
+    final jsonString = await rootBundle
+        .loadString('assets/lang/${AppLocaliztions.locale.languageCode}.json');
     final Map<String, dynamic> jsonMap = json.decode(jsonString);
     _localizedStrings =
         jsonMap.map((key, value) => MapEntry(key, value.toString()));
@@ -30,39 +29,37 @@ class LocalizationsService {
   String translate(String key) => _localizedStrings[key] ?? '';
 
   static Future<void> setLocaleCode(String localeCode) async {
-    final prefs = await SharedPreferences.getInstance();
-    LocalizationsService.locale = Locale(localeCode);
-    await prefs.setString('locale', localeCode);
+    await CacheHelper.saveData(value: localeCode, key: "locale");
+    AppLocaliztions.locale = Locale(localeCode);
   }
 
-  static Future getLocaleCode() async {
+  static Future<Locale> getLocaleCode() async {
     final localeValue = await CacheHelper.getData(key: 'locale');
     locale = Locale(localeValue ?? 'en');
+    return locale;
   }
 }
 
-class _LocalizationsServiceDelegate
-    extends LocalizationsDelegate<LocalizationsService> {
-  const _LocalizationsServiceDelegate();
+class _AppLocaliztionsDelegate extends LocalizationsDelegate<AppLocaliztions> {
+  const _AppLocaliztionsDelegate();
 
   @override
   bool isSupported(Locale locale) => ['en', 'ar'].contains(locale.languageCode);
 
   @override
-  Future<LocalizationsService> load(Locale locale) async {
-    LocalizationsService.locale = locale; // ضبط اللغة الثابتة هنا
-    final localizations = LocalizationsService();
+  Future<AppLocaliztions> load(Locale locale) async {
+    AppLocaliztions.locale = locale; // ضبط اللغة الثابتة هنا
+    final localizations = AppLocaliztions();
     await localizations.loadJsonLanguage();
     return localizations;
   }
 
   @override
-  bool shouldReload(
-          covariant LocalizationsDelegate<LocalizationsService> old) =>
+  bool shouldReload(covariant LocalizationsDelegate<AppLocaliztions> old) =>
       false;
 }
 
 extension TranslateX on String {
   String tr(BuildContext context) =>
-      LocalizationsService.of(context).translate(this);
+      AppLocaliztions.of(context).translate(this);
 }
